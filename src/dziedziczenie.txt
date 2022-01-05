@@ -1,0 +1,85 @@
+Dziedziczenie
+Osoba
+Student - extends osoba JEST obiektem klasy Osoba
+Uczeń - extends osoba
+
+A a -> pola A   i=1
+^-
+B b -> pola A, pola B   i=2
+^-
+C c -> pola A, pola B, pola C   i=3
+
+
+SOP(i)=3
+SOP(super.i)=2
+SOP(((A)this).i)=1
+
+public void draw(){
+super.draw();
+-----
+-----
+}
+SOP(i+" "+super.i+" "+((A)this).i)
+
+A a = new C();
+SOP(a.i) // 1
+C c = a; // error
+C c2 = (C)a;
+SOP(c2.i) // 3
+c2.metodeC(); // wykona się bo został rzutowany na C
+
+wszystkie klasy dziedziczą po Object
+Object ma metodę String toString();
+boolean equals(Object o)
+
+C -> B -> A // A B C
+wywoływanie konstruktorów od dziecka do rodzica
+wykonywanie konstruktorów od rodzica do dziecka
+
+Student st = new Student(...){
+    super(...);
+    this.p = .
+    ----
+}
+
+public
+protected
+package
+private
+
+final
+
+public interface Funkcje(){
+    public double f1();
+    public int f5();
+}
+
+class Klasa implements Funkcje(){
+
+}
+
+public interface Function{
+    double oblicz(double x);
+}
+public class Fun1 implements Function{
+double oblicz(x){
+....
+    }
+}
+bisekcja(Function f, ...)
+
+Function ff = new Fun1();
+
+zad. dom.
+w klasie pracownik
+bool equals(Object o) //porównuje imie nazwisko wiek
+int compareTo() -> implements Comparable<Pracownik>
+Arrays.sort()
+
+ protected Comparator<Pracownik> comparator = new Comparator<Pracownik>() {
+        @Override
+        public int compare(Pracownik o1, Pracownik o2) {
+            return 0;
+        }
+    }
+    Arrays.sort(firma,0,n,comparator)
